@@ -1,0 +1,77 @@
+// PROBLEM FIRST I TRIED THIS APPROACH BUT IT FAILED THIS TEST CASE.....
+
+// [11,49,100,20,86,29,72] k=4
+why this test case gives 232 while it is 207.
+In the first test case it will take left one i.e. 72
+in second one it will take 29.
+in third it will take 86.
+in 4th it will 20 itself 
+and that equals 207. //
+
+// REASON 
+
+// you have a take a maximum sum of a window of size 4, and the window is allowed to wrap around the corners.
+you can get a max by taking (72+ 11+49+100 = 232)
+
+your 207 answer is a greedy approach and won't always produce the optimum result. //
+
+ // CODE:
+
+// class Solution {
+//     public int maxScore(int[] a, int k) {
+//         int i = 0;
+//         int j =a.length-1;
+//         int max = 0;
+
+//         while( k!= 0 && i<=j){
+//             if(a[i]>a[j]){
+//                 max+=a[i];
+//                 i++;
+//             }else if(a[i]==a[j]){
+              
+//                int l = i+1;
+//                int r = j-1;
+
+//                while (l<=r){
+               
+
+//                    if(a[l]>a[r]){
+//                     l=-1;
+//                     break;
+//                    }else if (a[l]==a[r]){
+//                     l++;
+//                     r--;
+//                    }else{
+//                      r=-1;
+//                     break;
+//                    }
+//                }
+
+//                if(l==-1){
+//                 max+=a[i];
+//                 i++;
+//                }
+//                else{
+//                  max+=a[j];
+//                 j--;
+//                }
+            
+
+
+//               }  else{
+//                max+=a[j];
+//                 j--;
+//             }
+//             k--;
+
+
+//             }
+//             return max;
+           
+//         }
+// }
+
+
+// THE SOLUTION WHICH WILL WORK....................
+
+  
